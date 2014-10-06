@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Task 4</title>
+    <script>
+        less = {
+            env: "development",
+            poll: 1000
+        };
+    </script>
+    <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/main.less"/>
+    <script src="../Task-4/assets/js/lib/less-1.7.3.min.js"></script>  
+    <script src="../Task-4/assets/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="../Task-4/assets/css/less/bootstrap/js/dropdown.js"></script>
+    <script src="../Task-4/assets/css/less/bootstrap/js/collapse.js"></script>
+    <script src="../Task-4/assets/js/jquery.hint.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".form-group button").hint({
+                'delay': '1000'
+            });
+            $(".navbar-brand").hint();
+        });
+    </script>
+
+
+
+</head>
+<body>
+<!-- header -->
+<header>
+    <div class="masthead" role="navigation">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><!--Полоски на кноке-->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             <a href="Task-4.html" class="navbar-brand pull-left" data-hint="sedgdzfgsdgsdfgdfgdfgdfarsdfdsfdsfdch">Classified Ads</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="lng pull-right">
+                    <div class="en"><img src="assets/img/en.png"></div>
+                    <div class="change-lng">
+                        <div class="change-lng-button"></div>
+                    </div>
+                    <div class="spain"><img src="assets/img/spain.png"></div>
+                </div>
+                <button type="button" class="btn btn-danger navbar-btn pull-right">Post your ad</button>
+            </div>
+        </div>
+        <nav class="navbar navbar-default navbar-collapse" role="navigation">
+            <form class="form-inline" role="form">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            Los-Angeles <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Choose rubric <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default" data-hint="sear22233666ch">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </nav>
+    </div>
+
+</header>
+
+
+        <!-- container -->
+
+
+
+        <!-- footer -->
+        <footer class="footer">
+
+            <div class="wrapper">
+
+            </div>
+
+        </footer>
+
+
+
+
+
+</body>
+
+</html>

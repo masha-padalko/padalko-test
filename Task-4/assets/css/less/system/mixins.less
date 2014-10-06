@@ -1,0 +1,172 @@
+
+/* В миксинах описываются функции, упрощающие дальнейшее описание стилей */
+
+.rounded(@value: 3px) {
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    border-radius: @value;
+}
+
+.box-shadow(@value) {
+    -webkit-box-shadow: @value;
+    -moz-box-shadow: @value;
+    box-shadow: @value;
+}
+
+.scale(@value: 1.1) {
+    -webkit-transform: scale(@value);
+    -moz-transform: scale(@value);
+    -o-transform: scale(@value);
+    transform: scale(@value);
+}
+
+.rotate(@value: 360deg) {
+    -webkit-transform: rotate(@value);
+    -moz-transform: rotate(@value);
+    -o-transform: rotate(@value);
+    -ms-transform: rotate(@value);
+    transform: rotate(@value);
+}
+
+.rotateX(@value: 90deg) {
+    -webkit-transform: rotateX(@value);
+    -moz-transform: rotateX(@value);
+    -o-transform: rotateX(@value);
+    -ms-transform: rotateX(@value);
+    transform: rotateX(@value);
+}
+
+.transition(@first: all .15s) {
+    -webkit-transition: @first;
+    -moz-transition: @first;
+    -o-transition: @first;
+    -ms-transition: @first;
+    transition: @first;
+}
+
+.multiple-transition(@first: all .15s, @second) {
+    -webkit-transition: @first, @second;
+    -moz-transition: @first, @second;
+    -o-transition: @first, @second;
+    -ms-transition: @first, @second;
+    transition: @first, @second;
+}
+
+.transition-delay(@value: .15s) {
+    -webkit-transition-delay: @value;
+    transition-delay: @value;
+}
+
+.animation(@value) {
+    -webkit-animation: @value;
+    -moz-animation: @value;
+    -o-animation: @value;
+    animation: @value;
+}
+
+.animation-play-state(@value: paused) {
+    -webkit-animation-play-state: @value;
+    -moz-animation-play-state: @value;
+    -o-animation-play-state: @value;
+    animation-play-state: @value;
+}
+
+.text-gradient(@start, @end) {
+    background: -webkit-linear-gradient(top, @start 0%, @end 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-complicated-gradient(@start, @before_center, @after_center, @end, @color: #fafafa) {
+    color: @color;
+    background: -webkit-linear-gradient(top, @start 20%, @before_center 40%, @after_center 80%, @end 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-complicated-gradient-center(@start, @before_center, @after_center, @end) {
+	background: -webkit-linear-gradient(top, @start 0%, @before_center 50%, @after_center 51%, @end 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-double-border(@first_border, @second_border, @size: 2px, @size_first_border: 1px) {
+	text-shadow:
+		-@size_first_border -@size_first_border 0 @first_border,
+		@size_first_border -@size_first_border 0 @first_border,
+		-@size_first_border @size_first_border 0 @first_border,
+		@size_first_border @size_first_border 0 @first_border,
+		-2px -2px @size @second_border,
+		2px -2px @size @second_border,
+		-2px 2px @size @second_border,
+		2px 2px @size @second_border;
+}
+
+.clear(@value: both) {
+    display: block;
+    content: '';
+    clear: @value;
+}
+
+
+
+
+// Gradients
+
+#gradient {
+
+    // Horizontal gradient, from left to right
+    //
+    // Creates two color stops, start and end, by specifying a color and position for each color stop.
+    // Color stops are not available in IE9 and below.
+    .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+        background-image: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Safari 5.1-6, Chrome 10+
+        background-image: -o-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Opera 12
+        background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+    }
+
+    // Vertical gradient, from top to bottom
+    //
+    // Creates two color stops, start and end, by specifying a color and position for each color stop.
+    // Color stops are not available in IE9 and below.
+    .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+        background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+        background-image: -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Opera 12
+        background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+    }
+
+    .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+        background-repeat: repeat-x;
+        background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+        background-image: -o-linear-gradient(@deg, @start-color, @end-color); // Opera 12
+        background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    }
+    .horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+        background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+        background-image: -o-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+        background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+        background-repeat: no-repeat;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+    .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+        background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+        background-image: -o-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+        background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+        background-repeat: no-repeat;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+    .radial(@inner-color: #555; @outer-color: #333) {
+        background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+        background-image: radial-gradient(circle, @inner-color, @outer-color);
+        background-repeat: no-repeat;
+    }
+    .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+        background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+        background-image: -o-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+        background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    }
+}

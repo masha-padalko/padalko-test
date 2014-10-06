@@ -1,0 +1,66 @@
+
+@import "less/system/reset";
+@import "less/system/fonts";
+@import "less/bootstrap/less/bootstrap";
+@import "hint.less";
+
+body{
+	background: url('../img/body-bg.jpg') repeat;
+}
+
+header{
+	.navbar-inverse{
+		border-radius: @border-radius-none;
+		margin-bottom: 0;
+		background: #333;
+		.navbar-brand{
+			color: #fff;
+			font-size: 20px;
+			font-weight: bold;
+			&:hover{
+				color: @gray-light;
+			}
+		}
+		.navbar-collapse{
+			border: none;
+			box-shadow: none;
+			.lng{
+				margin-left: 25px;
+				margin-top: 13px;
+				.change-lng{
+					background: #2a2a2a;
+					width: 25px;
+					height: 11px;
+					float: left;
+					margin: 5px;
+					position: relative;
+					border-radius: @border-radius-large;
+					box-shadow: 0px 1px 1px #454545;
+					&-button{
+						width: 9px;
+						height: 9px;
+						background: #eee;
+						border-radius: @border-radius-large;
+						position: absolute;
+						top: 1px;
+						left: 1px;
+					}
+				}
+				.en, .spain{
+					float: left;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.navbar-default{
+		background: #dbdbdb;
+		padding-top: 7px;
+		.form-group{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+	}
+}

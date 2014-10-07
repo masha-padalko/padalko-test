@@ -5,12 +5,17 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
-body {
-    margin: 0
+* {
+    margin: 0;
+    padding: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block
+}
+
+ul{
+    list-style: none;
 }
 
 audio, canvas, progress, video {
@@ -47,10 +52,6 @@ dfn {
     font-style: italic
 }
 
-h1 {
-    font-size: 2em;
-    margin: .67em 0
-}
 
 mark {
     background: #ff0;
@@ -270,6 +271,7 @@ textarea {
 
 .clearfix {
     zoom: 1;
+    clear: both;
 }
 
 ::-moz-selection, ::selection {

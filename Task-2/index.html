@@ -14,13 +14,13 @@
             poll: 1000
         };
     </script>
-    <link rel="stylesheet" type="text/less" href="/assets/css/main.less"/>
-    <script src="/assets/js/lib/less-1.7.3.min.js"></script>  
-    <script src="/assets/js/lib/jquery-1.11.1.min.js"></script>
-    <script src="/assets/js/jquery.hint.js"></script>
+    <link rel="stylesheet" type="text/less" href="../Task-2/assets/css/main.less"/>
+    <script src="../Task-2/assets/js/lib/less-1.7.3.min.js"></script>  
+    <script src="../Task-2/assets/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="../Task-2/assets/js/jquery.hint.js"></script>
     <script>
         $(document).ready(function(){
-            $(".form-group button").hint({
+            $(".logo").hint({
                 'delay': '1000'
             });
         });
@@ -32,11 +32,36 @@
 <body>
 <!-- header -->
 <header>
-    <div class="center_container">
+    <div class="center-container">
         <a href="#" class="logo">Kohl Corp. Vacation planning</a>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">Hi, Matthew</a></li>
+                <li><a href="#">My info</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#" class="header-enter">Logout</a></li>
+            </ul>
+        </nav>
     </div>
 
 </header>
+<section class="main-content">
+    <div class="center-container">
+        <nav class="main-tabs">
+            <ul>
+                <li class="active">Overview <span class="tab-count">3</span></li>
+                <li>Time Offs <span class="tab-count">35</span></li>
+                <li>Purchases <span class="tab-count">1</span></li>
+                <li>Employees <span class="tab-count">3</span></li>
+            </ul>
+            <a href="#" class="main-tabs-settings">Company settings</a>
+            <div class="clearfix"></div>
+        </nav>
+        <article class="tab-content">
+            <h1>Overview</h1>
+        </article>
+    </div>
+</section>
 
 
         <!-- container -->

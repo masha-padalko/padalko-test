@@ -72,6 +72,8 @@ header{
 		width: 215px;
 		position: relative;
 		background: #fff;
+		float: left;
+		margin: 0 10px 10px 0;
 		&-inner{
 			padding: 10px;
 			p{
@@ -86,7 +88,8 @@ header{
 					right: 0;
 					color: #fff;
 					font-size: 12px;
-					padding: 10px 7px;
+					padding: 8px 5px;
+					font-weight: bold;
 				}
 				&.title{
 					color: #333;
@@ -118,9 +121,19 @@ header{
 		&:hover{
 			background: #fef5ca;
 			border-color: #fef5ca;
+			.box-shadow(2px 2px 9px 0px rgba(50, 50, 50, 0.75));
 			.bottom{
 				background: #f5ecc3;
 			}
+		}
+	}
+	// right side
+	.banners-right-side{
+		width: 214px;
+		&-item{
+			border: 1px solid #e1e1e1;
+			max-height: 190px;
+			margin-bottom: 8px;
 		}
 	}
 }

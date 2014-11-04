@@ -2,12 +2,11 @@
 
 <html>
 <head>
+    <title>Task 4</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
-    <title>Task 4</title>
     <script>
         less = {
             env: "development",
@@ -15,14 +14,28 @@
         };
     </script>
     <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/main.less"/>
-    <script src="../Task-4/assets/js/lib/less-1.7.3.min.js"></script>  
     <script src="../Task-4/assets/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="../Task-4/assets/js/jquery.shapeshift.min.js"></script>
+    <script src="../Task-4/assets/js/lib/less-1.7.3.min.js"></script>  
+    <script src="../Task-4/assets/js/jquery-ui.min.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/dropdown.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/collapse.js"></script>
 
+    <style>
+        .container {
+          position: relative;
+        }
 
+        .container > .content-block-item {
+          position: absolute;
+          width: 210px;
+        }
 
+        .container > div[data-ss-colspan="2"] { width: 420px; }
 
+        .container > .ss-placeholder-child {
+        }
+    </style>
 </head>
 <body>
 <!-- header -->
@@ -96,101 +109,104 @@
 
 
         <!-- container -->
-        <div class="container-fluid">
-            <div class="col-md-3">
-                <div class="content-block-item">
-                    <div class="content-block-item-inner">
-                        <div class="wrapper-img">
-                            <img src="assets/img/img-item/img-item-1.jpg" alt="" class="img-responsive">
-                            <span class="price">$2,500</span>
-                        </div>
-                        <a href="#" class="title">Bueno y ahorrador gasolina</a>
-                        <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
-                    </div>
-                    <div class="bottom">
-                        <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                        <span class"time">Today, 11:15 PM</span>
-                    </div>
-                </div>
-                <div class="content-block-item">
-                    <div class="content-block-item-inner">
-                        <div class="wrapper-img">
-                            <img src="assets/img/img-item/img-item-2.jpg" alt="" class="img-responsive">
-                            <span class="price">$2,500</span>
-                        </div>
-                        <a href="#" class="title">Bueno y ahorrador gasolina</a>
-                        <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
-                    </div>
-                    <div class="bottom">
-                        <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                        <span class"time">Today, 11:15 PM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="content-block-item">
-                    <div class="content-block-item-inner">
-                        <span class="price">$2,500</span>
-                        <a href="#" class="title">Bueno y ahorrador gasolina</a>
-                        <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
-                    </div>
-                    <div class="bottom">
-                        <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                        <span class"time">Today, 11:15 PM</span>
-                    </div>
-                </div>
-                <div class="content-block-item big">
-                    <div class="content-block-item-inner">
-                        <span class="price">$2,500</span>
-                        <a href="#" class="title">Bueno y ahorrador gasolina</a>
-                        <p>Vendo on honda civic 93 color rogo automatico motor y transmisions Vendo on honda civic 93 color rogo automatico motor</p>
-                    </div>
-                    <div class="bottom">
-                        <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                        <span class"time">Today, 11:15 PM</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
+        <div class="container" id="container-shipshape">
 
-                <div class="content-block-item">
-                    <div class="content-block-item-inner">
-                        <div class="wrapper-img">
-                            <img src="assets/img/img-item/img-item-2.jpg" alt="" class="img-responsive">
-                            <span class="price">$2,500</span>
-                        </div>
-                        <a href="#" class="title">Bueno y ahorrador gasolina</a>
-                        <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
+            <div class="content-block-item">
+                <div class="content-block-item-inner">
+                    <div class="wrapper-img">
+                        <img src="assets/img/img-item/img-item-1.jpg" alt="" class="img-responsive">
+                        <span class="price">$2,500</span>
                     </div>
-                    <div class="bottom">
-                        <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                        <span class"time">Today, 11:15 PM</span>
-                    </div>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="banners-right-side">
-                    <div class="banners-right-side-item">
-                        <a href="#"><img src="assets/img/banners/banner-1.png" alt="" class="img-responsive"></a>
+            <div class="content-block-item" data-ss-colspan="2">
+                <div class="content-block-item-inner">
+                    <div class="wrapper-img">
+                        <img src="assets/img/img-item/img-item-2.jpg" alt="" class="img-responsive">
+                        <span class="price">$2,500</span>
                     </div>
-                    <div class="banners-right-side-item">
-                        <a href="#"><img src="assets/img/banners/banner-2.png" alt="" class="img-responsive"></a>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
+                </div>
+            </div>
+            <div class="content-block-item">
+                <div class="content-block-item-inner">
+                    <span class="price">$2,500</span>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
+                </div>
+            </div>
+            <div class="content-block-item" data-ss-colspan="2">
+                <div class="content-block-item-inner">
+                    <span class="price">$2,500</span>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions Vendo on honda civic 93 color rogo automatico motor</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
+                </div>
+            </div>
+            <div class="content-block-item">
+                <div class="content-block-item-inner">
+                    <span class="price">$2,500</span>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions Vendo on honda civic 93 color rogo automatico motor</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
+                </div>
+            </div>
+            <div class="content-block-item">
+                <div class="content-block-item-inner">
+                    <div class="wrapper-img">
+                        <img src="assets/img/img-item/img-item-2.jpg" alt="" class="img-responsive">
+                        <span class="price">$2,500</span>
                     </div>
-                    <div class="banners-right-side-item">
-                       <a href="#"> <img src="assets/img/banners/banner-3.png" alt="" class="img-responsive"></a>
-                    </div>
-                    <div class="banners-right-side-item">
-                        <a href="#"><img src="assets/img/banners/banner-4.png" alt="" class="img-responsive"></a>
-                    </div>
-                    <div class="banners-right-side-item">
-                        <a href="#"><img src="assets/img/banners/banner-5.png" alt="" class="img-responsive"></a>
-                    </div>
-                    <div class="banners-right-side-item">
-                       <a href="#"> <img src="assets/img/banners/banner-1.png" alt="" class="img-responsive"></a>
-                    </div>
-                    <div class="banners-right-side-item">
-                       <a href="#"> <img src="assets/img/banners/banner-2.png" alt="" class="img-responsive"></a>
-                    </div>
+                    <a href="#" class="title">Bueno y ahorrador gasolina</a>
+                    <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
+                </div>
+                <div class="bottom">
+                    <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
+                    <span class"time">Today, 11:15 PM</span>
+                </div>
+            </div>        
+            <div class="banners-right-side content-block-item">
+                <div class="banners-right-side-item">
+                    <a href="#"><img src="assets/img/banners/banner-1.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                    <a href="#"><img src="assets/img/banners/banner-2.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                   <a href="#"> <img src="assets/img/banners/banner-3.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                    <a href="#"><img src="assets/img/banners/banner-4.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                    <a href="#"><img src="assets/img/banners/banner-5.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                   <a href="#"> <img src="assets/img/banners/banner-1.png" alt="" class="img-responsive"></a>
+                </div>
+                <div class="banners-right-side-item">
+                   <a href="#"> <img src="assets/img/banners/banner-2.png" alt="" class="img-responsive"></a>
                 </div>
             </div>
         </div>
@@ -205,9 +221,12 @@
 
         </footer>
 
-
-
-
+<script>
+     $("#container-shipshape").shapeshift({
+            minColumns: 3,
+            autoHeight: false
+      });
+</script>
 
 </body>
 

@@ -14,11 +14,15 @@
         };
     </script>
     <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/main.less"/>
+    <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/tooltipster.css"/>
+    <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/tooltipster-punk.css"/>
+    <link rel="stylesheet" type="text/less" href="../Task-4/assets/css/tooltipster-shadow.css"/>
     <script src="../Task-4/assets/js/lib/jquery-1.11.1.min.js"></script>
     <script src="../Task-4/assets/js/jquery.shapeshift.min.js"></script>
     <script src="../Task-4/assets/js/lib/less-1.7.3.min.js"></script>  
     <script src="../Task-4/assets/js/jquery-ui.min.js"></script>
-    <script src="../Task-4/assets/js/jquery.hint.js"></script>
+   
+    <script src="../Task-4/assets/js/jquery.tooltipster.min.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/dropdown.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/collapse.js"></script>
 
@@ -50,7 +54,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-             <a href="Task-4.html" class="navbar-brand pull-left" data-hint="sedgdzfgsdgsdfgdfgdfgdfarsdfdsfdsfdch">Classified Ads</a>
+             <a href="Task-4.html" class="navbar-brand pull-left price" data-hint="sedgdzfgsdgsdfgdfgdfgdfarsdfdsfdsfdch">Classified Ads</a>
             </div>
             <div class="navbar-collapse collapse">
                 <div class="lng pull-right">
@@ -116,7 +120,7 @@
                 <div class="content-block-item-inner">
                     <div class="wrapper-img">
                         <img src="assets/img/img-item/img-item-1.jpg" alt="" class="img-responsive">
-                        <span class="price"  data-hint="Price without VAT">$2,500</span>
+                        <span class="price first"  data-hint="Price without VAT">$2,500</span>
                     </div>
                     <a href="#" class="title">Bueno y ahorrador gasolina</a>
                     <p>Vendo on honda civic 93 color rogo automatico motor y transmisions</p>
@@ -148,7 +152,7 @@
                 </div>
                 <div class="bottom">
                     <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                    <span class"time">Today, 11:15 PM</span>
+                    <span class="time" id="arrow-color" title="Times are expressed in UTC">Today, 11:15 PM</span>
                 </div>
             </div>
             <div class="content-block-item" data-ss-colspan="2">
@@ -159,7 +163,7 @@
                 </div>
                 <div class="bottom">
                     <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                    <span class"time">Today, 11:15 PM</span>
+                    <span class="time" id="tooltip-content" title="Times are expressed in UTC">Today, 11:15 PM</span>
                 </div>
             </div>
             <div class="content-block-item">
@@ -170,7 +174,7 @@
                 </div>
                 <div class="bottom">
                     <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                    <span class"time">Today, 11:15 PM</span>
+                    <span class="time" id="default" title="Times are expressed in UTC">Today, 11:15 PM</span>
                 </div>
             </div>
             <div class="content-block-item">
@@ -184,7 +188,7 @@
                 </div>
                 <div class="bottom">
                     <span class="category"><a href="#">Cars</a> &#187; <a href="#">Honda</a></span>
-                    <span class"time">Today, 11:15 PM</span>
+                    <span class="time" id="tooltipster-punk" title="Times are expressed in UTC">Today, 11:15 PM</span>
                 </div>
             </div>        
             <div class="banners-right-side content-block-item">
@@ -221,19 +225,47 @@
             </div>
 
         </footer>
-
+<script src="../Task-4/assets/js/jquery.hint.js"></script>
 <script>
-  $(window).load(function(){
-    $("#container-shipshape").shapeshift({
-        minColumns: 3,
-        autoHeight: false
+    $(window).load(function(){
+        $("#container-shipshape").shapeshift({
+            minColumns: 3,
+            autoHeight: false
+        });
     });
+
+    $('#tooltipster-punk').tooltipster({
+        position: 'bottom',
+        animation: 'fade',
+        theme: 'tooltipster-punk',
+        timer: 50
+    });
+
+    $('#default').tooltipster({
+        position: 'left',
+        animation: 'grow'
+    });
+
+    $('#tooltip-content').tooltipster({
+        position: 'left',
+        animation: 'fall',
+        theme: 'tooltipster-shadow',
+        trigger: 'click', 
+        speed: '5000',
+        content: $('<img src="assets/img/banners/banner-1.png" width="50" height="50" /><p style="text-align:left;"><strong>Soufflé chocolate cake powder.</strong> Applicake lollipop oat cake gingerbread.</p>')
+    });
+
+    $('#arrow-color').tooltipster({
+        position: 'bottom-left',
+        animation: 'swing',
+        arrowColor: '#ff55ff'
+    });
+
     $(".price").hint({
         'delay': '1000',
         'animate': true,
         'colorThemes': 'grey'
     });
-  });
 
 </script>
 

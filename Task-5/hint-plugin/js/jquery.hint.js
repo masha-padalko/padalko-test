@@ -6,15 +6,11 @@
           'colorThemes': 'basic',
           'animate': true
         }, options );
+        var timeOut;
         $(this).on('mouseenter', function() {
-
           var $self = $(this);
 
-          var timeOut;
-
-          clearTimeout(timeOut);
-
-          var timeOut = setTimeout(function(){
+          timeOut = setTimeout(function(){
 
             if (!$self.is(":hover")) {
               return false;
@@ -44,9 +40,8 @@
           }, options.delay);
            
         }).on('mouseleave', function() {
-            
-            $(".hint").remove();
             clearTimeout(timeOut);
+            $(".hint").remove();
         });
         
   };

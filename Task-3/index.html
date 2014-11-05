@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Task 3</title>
+    <script>
+        less = {
+            env: "development",
+            poll: 1000
+        };
+    </script>
+    <link rel="stylesheet" type="text/less" href="../Task-3/assets/css/main.less"/>
+    <script src="../Task-3/assets/js/lib/less-1.7.3.min.js"></script>  
+    <script src="../Task-3/assets/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="../Task-3/assets/js/lib/jquery.period.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("*[data-interval]").period();
+        });
+    </script>
+
+
+
+</head>
+<body>
+<!-- header -->
+<header>
+    <div class="center-container">
+        <a href="#" class="logo">Kohl Corp. Vacation planning</a>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">Hi, Matthew</a></li>
+                <li><a href="#">My info</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#" class="header-enter">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<section class="main-content">
+
+    <div class="center-container">
+        <nav class="main-tabs">
+            <ul>
+                <li class="active">Overview <span class="tab-count">3</span></li>
+                <li>Time Offs <span class="tab-count">35</span></li>
+                <li>Purchases <span class="tab-count">1</span></li>
+                <li>Employees <span class="tab-count">3</span></li>
+            </ul>
+            <a href="#" class="main-tabs-settings">Company settings</a>
+            <div class="clearfix"></div>
+        </nav>
+        <article class="tab-content">
+            <h1>Overview</h1>
+            <time data-interval="2012-08-14T20:03Z,2012-08-15T19:40Z,2012-08-16T19:40Z,2012-08-18T08:15Z"></time>
+        </article>
+    </div>
+</section>
+
+
+        <!-- container -->
+
+
+
+        <!-- footer -->
+        <footer class="footer">
+            <article class="tab-content">
+                <h1>Overview</h1>
+                <time data-interval="2012-08-13T20:03Z,2012-08-14T19:40Z,2012-08-15T19:40Z,2012-08-16T08:15Z"></time>
+            </article>
+            <div class="wrapper">
+
+            </div>
+
+        </footer>
+
+
+
+
+
+</body>
+
+</html>

@@ -18,6 +18,7 @@
     <script src="../Task-4/assets/js/jquery.shapeshift.min.js"></script>
     <script src="../Task-4/assets/js/lib/less-1.7.3.min.js"></script>  
     <script src="../Task-4/assets/js/jquery-ui.min.js"></script>
+    <script src="../Task-4/assets/js/jquery.hint.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/dropdown.js"></script>
     <script src="../Task-4/assets/css/less/bootstrap/js/collapse.js"></script>
 
@@ -222,10 +223,14 @@
         </footer>
 
 <script>
-     $("#container-shipshape").shapeshift({
-            minColumns: 3,
-            autoHeight: false
-      });
+    $("#container-shipshape").shapeshift({
+        minColumns: 3,
+        autoHeight: false
+    });
+    $(".selector").hint({
+        'delay': '1000',
+        'animate': 'true'
+    });
 </script>
 
 </body>

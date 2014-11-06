@@ -26,39 +26,31 @@
         //date
         var dateArray = periodItemArray.map(function(el) {
 
-            var dateVal = new Date(el).getDate();
+            var milliseconds  = Date.parse(el);
 
-            return dateVal;
+            return milliseconds;
         });
 
-        //month
-        var monthArray = periodItemArray.map(function(el) {
-
-            var dateMonth = new Date(el).getMonth();
-
-            return dateMonth;
-        });
-       
         //min max value
           arrayMax = Math.max.apply( Math, dateArray );
           arrayMin = Math.min.apply( Math, dateArray );
 
-        //period dates  
-        var countDays = arrayMax-arrayMin;
+        //period dates 
+        var constConvertMilisec = 86400000; 
+        var countDays = Math.round((arrayMax-arrayMin)/constConvertMilisec);
 
-        //get month value from number
-        $.each(monthArray, function () {
-            getMonthName = function (v) {
-                var n = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                return n[v]
+        
+        var nameDay;
 
-            }
-            var getMonthN = getMonthName(this);
-            console.log(getMonthN);
-        });
+        if(countDays>1){
+          nameDay = "days";
+        }
+        else{
+          nameDay = "day";
+        }
 
         //echo period
-        var periodItem = el.text("Aug" +arrayMin+ "-" +arrayMax+ "," +countDays+ " days");
+        var periodItem = el.text("Aug" +arrayMin+ "-" +arrayMax+ "," +countDays +" "+ nameDay+ "");
 
     }
   };

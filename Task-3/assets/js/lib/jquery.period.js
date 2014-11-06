@@ -19,23 +19,11 @@
       return attrInner;
     }
 
-    function insertPeriod(el, data){
+    function insertPeriod(el, data){   
 
-        var periodItem = el.text(data);
         var periodItemArray = data.split(',');
 
-        
-        // var dateArray = $.each(periodItemArray, function() {
-                  
-
-        //   var day = dateVal.getDate();
-
-        //   // var arrayDays = day.map(function(el){ 
-        //   //     return this;
-        //   // }).get().join("\n");
-
-        // });
-
+        //date
         var dateArray = periodItemArray.map(function(el) {
 
             var dateVal = new Date(el).getDate();
@@ -43,14 +31,35 @@
             return dateVal;
         });
 
-        console.log(dateArray);
+        //month
+        var monthArray = periodItemArray.map(function(el) {
+
+            var dateMonth = new Date(el).getMonth();
+
+            return dateMonth;
+        });
        
+        //min max value
           arrayMax = Math.max.apply( Math, dateArray );
+          arrayMin = Math.min.apply( Math, dateArray );
 
-        console.log(arrayMax);
+        //period dates  
+        var countDays = arrayMax-arrayMin;
 
-          
-          // var month = dateVal.getMonth();
+        //get month value from number
+        $.each(monthArray, function () {
+            getMonthName = function (v) {
+                var n = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                return n[v]
+
+            }
+            var getMonthN = getMonthName(this);
+            console.log(getMonthN);
+        });
+
+        //echo period
+        var periodItem = el.text("Aug" +arrayMin+ "-" +arrayMax+ "," +countDays+ " days");
+
     }
   };
 
